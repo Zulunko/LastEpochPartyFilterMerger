@@ -7,7 +7,7 @@ Installation steps:
 
 To set up the filter:
 1. [Optional] In-game, you can create a filter called "p_start" which will add any custom rules you want *at the start* of the generated filter.
-2. In-game, ensure any filters for any players you will be playing with are added with the name "pp_[name]". E.g. Z's filter should be named "pp_Z".
+2. In-game, ensure any filters for any players you will be playing with are added with the name "pp_[name]". E.g. Z's filter should be named "pp_Z". This should automatically be the case if people have named their filters accordingly on Last Epoch Tools.
 3. In-game ensure you have a "p_end" filter which should, at a baseline, hide all normal/magic/rare/exalted items. You can add additional rules to this if you'd like.
 4. In the subdirectory you created for this script, double-click on build_filter.py.
 5. In-game, the filter list should now include a filter named "pf_[names]". This is the aggregate filter for your party, select it and everything should be good.
