@@ -14,7 +14,9 @@ import requests
 pastebin_filters = [
     ("Z", "https://pastebin.com/raw/mKZQpy0J"),
     ("fluo", "https://pastebin.com/raw/yGeANPQt"),
-    ("Riz", "https://pastebin.com/raw/bLR83Sps")
+    ("Riz", "https://pastebin.com/raw/bLR83Sps"),
+    ("Revya", "https://pastebin.com/raw/YmHvG6n2"),
+    ("Dk", "https://pastebin.com/raw/VAZuKL38")
 ]
 
 # takes a filename as infilename and an open file as outfile,
