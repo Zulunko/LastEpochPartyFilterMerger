@@ -1,6 +1,6 @@
 Installation steps:
 1. Install Python.
-2. Download the files in this repository (e.g. via zip download). If you want to download via git clone, clone it after step 4 (in the folder you create).
+2. Download the files in this repository (e.g. by clicking the top link under "Releases" to the right and then clicking "Source code (zip)"). If you want to download via git clone, clone it after step 4 (in the folder you create).
 3. Go to your Last Epoch filter folder. You can go to the filters in-game, click the button to add a new filter, and click "Open Filter Folder" to get here.
 4. Make a new folder in the filter folder, named whatever you want (probably something like "Party Filter Generator").
 5. Place the repository files in the new folder.
