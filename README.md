@@ -16,3 +16,6 @@ Warnings / how to use:
 1. If you want to update your part of the filter, update your pp_[name] on Last Epoch Tools, download the filter for yourself, run build_filter.py, and notify people that the filter has been updated.
 2. If you want to update the filter because someone's part was updated, first update any pp_[name] filters that need to be updated and then run build_filter.py. You may need to deselect / reselect the filter to make the game recognize the new version (I'm not sure about this).
 3. Do NOT attempt to change the pf_[names] filter directly. You can change p_start and p_end in-game if you want to without using Last Epoch Tools, but any time you want to update your pp_[name] it's best to do it on Last Epoch Tools so other people can also get your updated filter.
+
+TODO:
+If anyone feels motivated to figure out how, it'd be much better to automatically download all pp_[name] filters from Last Epoch Tools rather than requiring people to manage those files themselves. I'm not sure how to do this; Last Epoch Tools has no public API as far as I know.
