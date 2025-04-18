@@ -12,7 +12,9 @@ import random
 import requests
 
 pastebin_filters = [
-    ("Z", "https://pastebin.com/raw/mKZQpy0J")
+    ("Z", "https://pastebin.com/raw/mKZQpy0J"),
+    ("fluo", "https://pastebin.com/raw/yGeANPQt"),
+    ("Riz", "https://pastebin.com/raw/bLR83Sps")
 ]
 
 # takes a filename as infilename and an open file as outfile,
