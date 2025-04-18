@@ -1,0 +1,8 @@
+<ItemFilter xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <name>GENERATED Party Filter</name>
+  <filterIcon>20</filterIcon>
+  <filterIconColor>0</filterIconColor>
+  <description />
+  <lastModifiedInVersion>1.2.0.1</lastModifiedInVersion>
+  <lootFilterVersion>0</lootFilterVersion>
+  <rules>
