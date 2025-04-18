@@ -9,7 +9,11 @@
 
 import os
 import random
+import requests
 
+pastebin_filters = [
+    ("Z", "https://pastebin.com/raw/mKZQpy0J")
+]
 
 # takes a filename as infilename and an open file as outfile,
 # appends the data from the file infilename to outfile. Always adds a newline.
@@ -36,6 +40,18 @@ def copy_filter_rules(infilename, outfile):
                     break
                 outfile.write(line)
         outfile.write("\n")
+
+def download_pastebin_filter(url, outfilename):
+    response = requests.get(url)
+    if not response:
+        return False
+    with open(outfilename, "bw") as outfile:
+        outfile.write(response.content)
+    return True
+
+for filter_tuple in pastebin_filters:
+    if (not download_pastebin_filter(filter_tuple[1], "../pp_"+filter_tuple[0]+".xml")):
+        print("ERROR DOWNLOADING FILTER: " + filter_tuple[0] + ": " + filter_tuple[1])
 
 filter_name = "../pf_"
 with open("tmp.xml", "w") as tmpfilter:
