@@ -40,9 +40,12 @@ def copy_filter_rules(infilename, outfile):
 filter_name = "../pf_"
 with open("tmp.xml", "w") as tmpfilter:
     copy_all_file_contents("filter_prefix", tmpfilter)
+    # Filter is listed in reverse for some reason...
     candidate_files = os.listdir("../")
-    if "p_start.xml" in candidate_files:
-        copy_filter_rules("../p_start.xml", tmpfilter)
+        
+    if "p_end.xml" in candidate_files:
+        copy_filter_rules("../p_end.xml", tmpfilter)
+
     pp_files = []
     for file in candidate_files:
         if file.startswith("pp_"):
@@ -52,8 +55,10 @@ with open("tmp.xml", "w") as tmpfilter:
     random.shuffle(pp_files)
     for pp_name in pp_files:
         copy_filter_rules("../pp_"+pp_name+".xml", tmpfilter)
-    if "p_end.xml" in candidate_files:
-        copy_filter_rules("../p_end.xml", tmpfilter)
+    
+    if "p_start.xml" in candidate_files:
+        copy_filter_rules("../p_start.xml", tmpfilter)
+        
     copy_all_file_contents("filter_suffix", tmpfilter)
 
 filter_name += ".xml"
