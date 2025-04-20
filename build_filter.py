@@ -11,13 +11,15 @@ import os
 import random
 import requests
 
-pastebin_filters = [
+pastebin_player_filters = [
     ("Z", "https://pastebin.com/raw/mKZQpy0J"),
     ("fluo", "https://pastebin.com/raw/yGeANPQt"),
     ("Riz", "https://pastebin.com/raw/bLR83Sps"),
     ("Revya", "https://pastebin.com/raw/YmHvG6n2"),
     ("Dk", "https://pastebin.com/raw/VAZuKL38")
 ]
+
+pastebin_unique_filter = "https://pastebin.com/raw/ZStqG0m1"
 
 # takes a filename as infilename and an open file as outfile,
 # appends the data from the file infilename to outfile. Always adds a newline.
@@ -53,19 +55,23 @@ def download_pastebin_filter(url, outfilename):
         outfile.write(response.content)
     return True
 
-for filter_tuple in pastebin_filters:
+for filter_tuple in pastebin_player_filters:
     if (not download_pastebin_filter(filter_tuple[1], "../pp_"+filter_tuple[0]+".xml")):
         print("ERROR DOWNLOADING FILTER: " + filter_tuple[0] + ": " + filter_tuple[1])
+if (not download_pastebin_filter(pastebin_unique_filter, "../p_uniques.xml")):
+    print("ERROR DOWNLOADING FILTER: p_uniques.xml: " + pastebin_unique_filter)
 
 filter_name = "../pf_"
 with open("tmp.xml", "w") as tmpfilter:
     copy_all_file_contents("filter_prefix", tmpfilter)
     # Filter is listed in reverse for some reason...
     candidate_files = os.listdir("../")
-        
+    
     if "p_end.xml" in candidate_files:
         copy_filter_rules("../p_end.xml", tmpfilter)
-
+    if "p_uniques.xml" in candidate_files:
+        copy_filter_rules("../p_uniques.xml", tmpfilter)
+    
     pp_files = []
     for file in candidate_files:
         if file.startswith("pp_"):
